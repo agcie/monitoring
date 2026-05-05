@@ -1,0 +1,14 @@
+openapi: 3.0.3
+info:
+  title: Monitor Go Backend
+  version: 1.0.0
+paths:
+  /:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: Service is up
+          content:
+            text/plain:
+              example: ok

@@ -1,0 +1,11 @@
+.env
+*.env
+go_be/go_be
+go_be/*.test
+node_be/node_modules/
+react_fe/node_modules/
+react_fe/dist
+react_fe/.env*
+react_fe/.vite
+.claude
+node_modules/

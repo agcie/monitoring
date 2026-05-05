@@ -1,0 +1,32 @@
+{
+  "name": "monitor_full",
+  "version": "1.0.0",
+  "description": "URL monitoring service monorepo",
+  "private": true,
+  "scripts": {
+    "prepare": "husky",
+    "lint": "npm run lint:node && npm run lint:fe",
+    "lint:node": "cd node_be && npx eslint .",
+    "lint:fe": "cd react_fe && npx eslint .",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\" --ignore-path .gitignore",
+    "format:check": "prettier --check \"**/*.{js,jsx,json,md}\" --ignore-path .gitignore"
+  },
+  "lint-staged": {
+    "go_be/**/*.go": "/usr/local/go/bin/gofmt -w",
+    "node_be/**/*.{js,json}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "react_fe/**/*.{js,jsx,json}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "**/*.md": "prettier --write"
+  },
+  "devDependencies": {
+    "eslint": "^10.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3"
+  }
+}
